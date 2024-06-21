@@ -8,3 +8,5 @@ class Sqlite {
     this.db =  new Database(DbPathCheck(dbName), {verbose : console.log});
   }
 }
+
+module.exports = Sqlite
