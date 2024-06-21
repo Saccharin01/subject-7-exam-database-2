@@ -29,3 +29,5 @@ function DbPathCheck(path){
     throw new Error(errMsg);
   }
 }
+
+module.exports = DbPathCheck;
