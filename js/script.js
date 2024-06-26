@@ -3,9 +3,10 @@ const reDirect = (url, loadTime)=>{
   const loadingBar = document.querySelector(".innerLoading")
   let condition = 0
   let maxCount = 100
+  let anotherCond = loadTime/maxCount
 
 
-  function animation(){
+  const animation = ()=>{
     if(condition < maxCount){
       
       // setTimeout(()=>{
@@ -15,17 +16,18 @@ const reDirect = (url, loadTime)=>{
           console.log(condition)
           condition++
           loadingBar.style.width = `${condition}%`
-          setTimeout(animation,16)
+          setTimeout(animation,anotherCond) // ! 너무 빨리 넘어감
         // animation()
       // },16)
     }else{
-      window.location.href = url // ? something 매개변수는 리다이렉트를 걸 html 링크로 할 예정
+      window.location.href = url // ? something 매개변수는 리다이렉트를 걸 html 링크로 할 예정 
+      // * else로 빠지면 바로 쏴버리게
     }
   }
-  setTimeout(animation,loadTime)
+  setTimeout(animation,0) // ! loadTime 만큼 시간이 지나고 움직임
 }
 
 
 document.addEventListener("DOMContentLoaded", ()=>{
-  reDirect("slide2.html",1000)
+  reDirect("slide2.html",5000)
 })
