@@ -1,12 +1,19 @@
+const reDirect = (url, loadTime)=>{ // ? location = 이동을 원하는 url / loadTime = 몇 초 안에?
+  const loadingBar = document.getElementById("innerLoading")
+  
+  setTimeout(()=>{
+    if(someCondition){
 
-function reDirect(location, loadTime){ // ? location = 이동을 원하는 url / loadTime = 몇 초 안에?
+      loadingBar.style.width = condition  // todo 이 안에 로딩바를 움직일 뭔가가 들어가야 함
+    // ? 재귀도 찍어야 하는데?
+    // todo 매개변수로 들어온 밀리 초를 이용해서 로딩 바의 너비가 늘어나야 함.
 
-  document.addEventListener("DOMContentLoaded", ()=>{ // ? 페이지가 다 로드 되었을 때 시작될 이벤트리스너
-    let loadingBar = document.getElementById("innerLoading")
-
-    setTimeout(()=>{
-      loadingBar.style.width = 
-      window.location.href = `${location}` // ? something 매개변수는 리다이렉트를 걸 html 링크로 할 예정
+    reDirect()
+    } else {
+      window.location.href = url // ? something 매개변수는 리다이렉트를 걸 html 링크로 할 예정
+    }
     },loadTime)
-  })
 }
+
+
+reDirect("slide2.html",10000)
