@@ -22,10 +22,10 @@ const reDirect = (url, loadTime)=>{
       window.location.href = url // ? something 매개변수는 리다이렉트를 걸 html 링크로 할 예정
     }
   }
-  setTimeout(animation,16)
+  setTimeout(animation,loadTime)
 }
 
 
 document.addEventListener("DOMContentLoaded", ()=>{
-  reDirect("slide2.html",10000)
+  reDirect("slide2.html",1000)
 })
