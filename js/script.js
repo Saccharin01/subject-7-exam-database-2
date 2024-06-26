@@ -18,7 +18,7 @@ const reDirect = (url, loadTime)=>{
           console.log(condition)
           setTimeout(animation,duration) // ! 너무 빨리 넘어감
 
-        loadingBar.style.transition = `width ${duration}s ease-out`;/* transition: width 0.1s ease-out; */
+        loadingBar.style.transition = `width ${duration}ms ease-out`;/* transition: width 0.1s ease-out; */
     }else{
       window.location.href = url // ? something 매개변수는 리다이렉트를 걸 html 링크로 할 예정 
       // * else로 빠지면 바로 쏴버리게
@@ -29,7 +29,7 @@ const reDirect = (url, loadTime)=>{
 
 
 document.addEventListener("DOMContentLoaded", ()=>{
-  reDirect("slide2.html",7000)
+  reDirect("slide2.html",5000)
 })
 
 
