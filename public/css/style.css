@@ -43,7 +43,7 @@
   height: 40px;
   background-color: rgb(138, 138, 138);
   }
-  .loding > div {
+  .innerLoading {
   width: 10vw;
   height: 40px;
   background-color: green;
