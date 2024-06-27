@@ -1,7 +1,7 @@
 const Database = require("better-sqlite3");
 const DbPathCheck = require("./DbPathCheck");
 
-//TODO : Sqlite Query문 실행에 관한 메소드가 필요합니다.
+//Sqlite Query문 실행에 관한 메소드가 필요합니다.
 class Sqlite {
   constructor(dbName){
     //* dbName으로 Database 객체를 생성한다.
@@ -58,7 +58,6 @@ class Sqlite {
         throw err;
       }
     }
-  
     /**
      * 데이터베이스 닫기 메서드
      */
