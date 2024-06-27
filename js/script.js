@@ -1,3 +1,4 @@
+
 const reDirect = (url, loadTime)=>{
 
   const loadingBar = document.querySelector(".innerLoading")
