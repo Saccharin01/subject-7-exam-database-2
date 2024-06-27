@@ -12,7 +12,7 @@ let server = http.createServer((req, res)=>{
     if(req.url === "/"){
       // console.log(__dirname)
       let landPath = path.join(__dirname,"public","html","index.html")
-      // console.log(htmlpath)
+      // console.log(landPath)
       fs.readFile(landPath,"utf-8",(err,data)=>{
         if(err){
           res.writeHead(500, {"content-type" : "text/plain"})
@@ -87,9 +87,6 @@ let server = http.createServer((req, res)=>{
           res.end()
         }
       })
-    }
-    else if(req.url.split(".")[1] === "png"){
-
     }
   }
 })

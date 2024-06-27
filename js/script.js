@@ -32,32 +32,3 @@ const reDirect = (url, loadTime)=>{
 document.addEventListener("DOMContentLoaded", ()=>{
   reDirect("slide2.html",5000)
 })
-
-
-// const reDirect = (url, loadTime) => {
-//   const loadingBar = document.querySelector(".innerLoading");
-//   let condition = 0;
-//   const maxCount = 100;
-//   const stepTime = loadTime / maxCount; // 각 단계마다 걸리는 시간 계산
-
-//   const animation = () => {
-//     if (condition < maxCount) {
-//       condition++;
-//       loadingBar.style.width = `${condition}%`;
-//       console.log(condition);
-
-//       // 다음 단계로 넘어가기 위해 재귀적으로 호출
-//       setTimeout(animation, stepTime);
-//     } else {
-//       // 로딩 바가 100%가 되면 페이지 이동
-//       window.location.href = url;
-//     }
-//   };
-
-//   // 로딩 바 애니메이션 시작
-//   setTimeout(animation, stepTime); // 애니메이션 시작
-// };
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   reDirect("slide2.html", 000); // 로딩 시간 5000ms (5초)
-// });
