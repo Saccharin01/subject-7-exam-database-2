@@ -39,15 +39,16 @@ let server = http.createServer((req, res)=>{
       })
     }
     else if(req.url.split(".")[1] === "js"){
-      console.log(__dirname)
+      // console.log(__dirname)
       let jspath = path.join(__dirname,"js",req.url.split("/")[1])
-      console.log(jspath)
+      // console.log(jspath)
       fs.readFile(jspath,"utf-8",(err,data)=>{
         if(err){
           res.writeHead(500, {"content-type" : "text/plain"})
           res.write("server error")
         } else {
           // console.log(data)
+          // todo 컨텐츠 타입
           res.writeHead(200, {"content-type" : "text/html"})
           res.write(data)
           res.end()
