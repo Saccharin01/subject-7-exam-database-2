@@ -11,9 +11,28 @@ let server = http.createServer((req, res)=>{
   if(req.method === "GET"){
     if(req.url === "/"){
       // console.log(__dirname)
-      let htmlpath = path.join(__dirname,"public","html","index.html")
+      let landPath = path.join(__dirname,"public","html","index.html")
       // console.log(htmlpath)
-      fs.readFile(htmlpath,"utf-8",(err,data)=>{
+      fs.readFile(landPath,"utf-8",(err,data)=>{
+        if(err){
+          res.writeHead(500, {"content-type" : "text/plain"})
+          res.write("server error")
+        } else {
+          // console.log(data)
+          res.writeHead(200, {"content-type" : "text/html"})
+          res.write(data)
+          res.end()
+        }
+      })
+    }
+
+
+
+    else if(req.url.split(".")[1]=== "html"){
+       // console.log(__dirname)
+      let landPath = path.join(__dirname,"public","html",req.url.split("/")[1])
+      // console.log(htmlpath)
+      fs.readFile(landPath,"utf-8",(err,data)=>{
         if(err){
           res.writeHead(500, {"content-type" : "text/plain"})
           res.write("server error")
@@ -26,7 +45,7 @@ let server = http.createServer((req, res)=>{
       })
     }
     else if(req.url.split(".")[1] === "png"){
-      let imagePath = path.join(__dirname,"public","html","/Rectangle1.png")
+      let imagePath = path.join(__dirname,"public","resource",req.url.split("/")[1])
       fs.readFile(imagePath,(err,data)=>{
         if(err){
           res.writeHead(500, {"content-type" : "text/plain"})
@@ -48,12 +67,29 @@ let server = http.createServer((req, res)=>{
           res.write("server error")
         } else {
           // console.log(data)
-          // todo 컨텐츠 타입
-          res.writeHead(200, {"content-type" : "text/html"})
+          res.writeHead(200, {"content-type" : "application/javaScript"})
           res.write(data)
           res.end()
         }
       })
+    }
+    else if(req.url.split(".")[1] === "css"){
+      let csspath = path.join(__dirname,"public","css",req.url.split("/")[1])
+      // console.log(jspath)
+      fs.readFile(csspath,"utf-8",(err,data)=>{
+        if(err){
+          res.writeHead(500, {"content-type" : "text/plain"})
+          res.write("server error")
+        } else {
+          // console.log(data)
+          res.writeHead(200, {"content-type" : "text/css"})
+          res.write(data)
+          res.end()
+        }
+      })
+    }
+    else if(req.url.split(".")[1] === "png"){
+
     }
   }
 })
